@@ -5,6 +5,8 @@ This software will be able to handle multiple periodic table related things in t
 **What this calculator does **
 As stated above, this calculator helps with calculating molar mass of big compounds. Personally, I have found it very tedious to have to look up the atomic mass of each element, then multiply it by the # of occurrences, then repeat the process for every element within the compound. Therefore, this calculator's molar mass functionality allows you to simply type in the element's name (e.g. Na), followed directly by the number of times you want it (e.g. Na3). You can also choose to omit a number, and it will default to one (e.g. Na = one sodium atom).
 
+Link to replit if you want to run it: https://replit.com/@blitcssh/periodictable
+
 **IMPORTANT**: the calculator can only interpret single elements at a time, and the continuous sum is tracked via "sum"
 
 E.g. 
