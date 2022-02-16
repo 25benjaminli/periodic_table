@@ -126,14 +126,11 @@ table = {
   "Og" : element("oganesson", 294, 118),
 }
 
-
-# for i in table.values():
-#   print(i.name + " has " + str(i.p) + " protons and has an atomic mass of " + str(i.amu))
-
 mode = input("mode: mole calculations(m)? ")
 
 if mode == 'm':
   print("ctrl-c to quit.")
+  print("if you are looking for the molar mass of a compound, type in the individual atoms with their count, then look for \"sum\".")
   sum = 0
   prev_mass = 0
   while(True):
@@ -160,7 +157,8 @@ if mode == 'm':
       print("name: " + table.get(element).name)
       print("amu: " + str(table.get(element).amu))
       print("protons: " + str(table.get(element).p))
-      print("sum: " + str(round(sum, 3)))
+      print()
+      print("SUM: " + str(round(sum, 3)))
       prev_mass = round(table.get(element).amu * times, 3)
 
     except:
@@ -176,7 +174,6 @@ if mode == 'm':
         continue
       print("unable to make the calculation, try again.")
     sum = round(sum, 3)
-    
     print()
 
 
