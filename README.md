@@ -7,7 +7,10 @@ As stated above, this calculator helps with calculating molar mass of big compou
 
 Link to replit if you want to run it: https://replit.com/@blitcssh/periodictable
 
-**IMPORTANT**: the calculator can only interpret single elements at a time, and the continuous sum is tracked via "sum"
+You may have to type "m" twice for the calculator to respond (weird circular import stuff that I don't care to fix)
+
+
+**IMPORTANT**: the calculator can only interpret single elements at a time, and the continuous sum is tracked via "sum".
 
 E.g. 
 
@@ -18,7 +21,7 @@ Typing the above in directly would *NOT* work since the calculator would not kno
 
 Example of **valid inputs** for elements:
 
-Mg3
+Mg3 <-- Three atoms of magnesium
 O <-- Assumes a single atom
 
 Examples of **invalid inputs** for elements (it will tell you that it cannot make the calculation):
@@ -30,5 +33,3 @@ NaO2 <-- cannot have multiple elements grouped together (must be entered separat
 
 Questions answered via DMs @ lmao.#0369 for discord
 Credit: Ben
-
-P.S. Yes, I hardcoded the entire periodic table and may have sustained heavy brain damage, but it was worth it.

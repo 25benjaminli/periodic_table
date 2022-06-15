@@ -1,8 +1,12 @@
+import calc_data
+
 class element():
   def __init__(self, name, amu, p):
     self.name = name
     self.amu = amu
     self.p = p
+    self.valence = p if p <=2 else (p-2) % 9 + 1 # fix
+  
 
 # neutrons utilizes the averaged atomic mass
 table = {
@@ -126,55 +130,12 @@ table = {
   "Og" : element("oganesson", 294, 118),
 }
 
+# make a compound generator...
+
 mode = input("mode: mole calculations(m)? ")
 
 if mode == 'm':
-  print("ctrl-c to quit.")
-  print("if you are looking for the molar mass of a compound, type in the individual atoms with their count, then look for \"sum\".")
-  sum = 0
-  prev_mass = 0
-  while(True):
-    thing = input("symbol, (c - clear), (d - delete prev) then count: ")
-    what = ""
-    counter = 0
-    for i in range(len(thing)):
-      if thing[counter].isnumeric():
-        what += thing[counter:len(thing)]
-        break
-      counter += 1
-    if len(what) == 0:
-      times = 1
-    else:
-      times = int(what)
-    
-    element = thing[0:counter]
-
-    try:
-      if (element == 'c' or element == 'd'):
-        int("hi") # break into except stupidly
-      print("you want to multiply your element, " + element + ", by " + str(times) + " times, correct?")
-      sum += (table.get(element).amu * times)
-      print("name: " + table.get(element).name)
-      print("amu: " + str(table.get(element).amu))
-      print("protons: " + str(table.get(element).p))
-      print()
-      print("SUM: " + str(round(sum, 3)))
-      prev_mass = round(table.get(element).amu * times, 3)
-
-    except:
-      if (element == 'c'):
-        print("cleared.")
-        sum = 0
-        continue
-      elif element == 'd':
-        print("deleted previous: " + str(prev_mass))
-        sum -= prev_mass
-        sum = round(sum, 3)
-        print("new sum: " + str(sum))
-        continue
-      print("unable to make the calculation, try again.")
-    sum = round(sum, 3)
-    print()
+  calc_data.calc()
 
 
 
